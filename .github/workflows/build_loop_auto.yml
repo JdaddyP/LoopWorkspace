@@ -238,6 +238,8 @@ jobs:
           /bin/bash -c "$(curl -fsSL \
           https://raw.githubusercontent.com/loopandlearn/lnl-scripts/main/CustomizationSelect.sh)" \
           negative_insulin
+          # Custom carb absorption defaults: 30 min, 4 hr, 7 hr
+          curl -fsSL https://github.com/JdaddyP/Loop/commit/f2ed7cf2285699cd528242f0c62dd6836c7a2372.patch | git apply --directory=Loop -v --whitespace=fix
 
       # Patch Fastlane Match to not print tables
       - name: Patch Match Tables
